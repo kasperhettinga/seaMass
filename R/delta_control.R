@@ -73,7 +73,7 @@ delta_control <- function(
 setValidity("delta_control", function(object) {
   if (length(object@component.deviations) != 1) return("'component.deviations' is not valid!")
   if (!(all(object@keep %in% c("markdown", "group.quants.de", "component.deviations.de")))) return("'keep' is not valid!")
-  if (!(all(object@keep %in% c("groups")))) return("'summarise' is not valid!")
+  if (!(all(object@summarise %in% c("groups")))) return("'summarise' is not valid!")
   if (!(all(object@plot %in% c("group.quants.volcano", "group.quants.fdr", "group.quants.de")))) return("'plot' is not valid!")
   if (length(object@model) != 1 || !(object@model %in% c("", "MCMCglmm"))) return("'model' is not valid!")
   if (length(object@nwarmup) != 1 || object@nwarmup < 0) return("'nwarmup' must be non-negative!")
